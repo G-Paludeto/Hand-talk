@@ -1,0 +1,235 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contato</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-GLhlTQ8iRABdZLl6O3oVMWSktQOp6b7In1Zl3/Jr59b6EGGoI1aFkw7cmDA6j6gD" crossorigin="anonymous">
+
+    <style>
+        /* Estilos CSS para o corpo */
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            text-align: center;
+        }
+
+        /* Estilos CSS para o botão de abrir a janela de contato */
+        .contact-button {
+            margin: 20px;
+            padding: 10px 20px;
+            font-size: 18px;
+            background-color: #085a42;
+            color: #81d3ba;
+            border: none;
+            cursor: pointer;
+        }
+
+        /* Estilos CSS para a janela de contato */
+        .contact-popup {
+            display: none;
+            position: fixed;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            width: 300px;
+            padding: 20px;
+            background-color: #81d3ba;
+            border: 1px solid #085a42;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+            z-index: 1;
+        }
+
+        .contact-popup h2 {
+            text-align: center;
+        }
+
+        .contact-popup input[type="text"],
+        .contact-popup input[type="email"],
+        .contact-popup textarea {
+            width: 100%;
+            padding: 10px;
+            margin-bottom: 10px;
+        }
+
+        .contact-popup button {
+            width: 100%;
+            padding: 10px;
+            background-color: #085a42;
+            color: #81d3ba;
+            border: none;
+            cursor: pointer;
+        }
+                /* Estilos CSS para a barra de navegação */
+                body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+        }
+        .navbar {
+            background-color: #81d3ba;
+            overflow: hidden;
+        }
+        .navbar a {
+            float: left;
+            font-size: 16px;
+            color: #085a42;
+            text-align: center;
+            padding: 14px 16px;
+            text-decoration: none;
+        }
+        .navbar a:hover {
+            background-color: #81d3ba;
+            color: #085a42;
+        }
+
+        /* Estilos CSS para o formulário de contato */
+        .container {
+            padding: 20px;
+        }
+        form {
+            max-width: 400px;
+            margin: 0 auto;
+        }
+        label, input, textarea {
+            display: block;
+            margin-bottom: 10px;
+        }
+
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+        }
+        .footer {
+            background-color: #085a42;
+            color: #81d3ba;
+            text-align: center;
+            padding: 10px;
+            position: fixed;
+            bottom: 0;
+            width: 100%;
+        }
+
+        /* Estilos CSS para o conteúdo */
+        .content {
+            padding: 20px;
+        }
+
+        /* Estilos CSS para a janela flutuante */
+        .popup {
+            position: fixed;
+            top: 0;
+            right: -400px; /* Inicialmente, a janela está fora da tela */
+            width: 300px;
+            height: 100%;
+            background-color: #81d3ba;
+            box-shadow: 0 0 5px rgba(0, 0, 0, 0.3);
+            transition: right 0.3s ease-in-out;
+            z-index: 1;
+        }
+
+        .popup.open {
+            right: 0; /* Quando aberta, a janela fica visível */
+        }
+
+        .popup-header {
+            background-color: #085a42;
+            color: #81d3ba;
+            padding: 10px;
+        }
+
+        .popup-content {
+            padding: 20px;
+        }
+
+        /* Estilos CSS para os campos de texto na janela flutuante */
+        input[type="text"] {
+            width: 100%;
+            padding: 10px;
+            margin-bottom: 10px;
+        }
+    </style>
+</head>
+<body>
+    <nav class="navbar navbar-expand-lg ">
+  
+        <div class="container-fluid">
+          <a class="navbar-brand" href="#">Hand Talk</a>
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+          </button>
+          <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            <ul class="navbar-nav me-auto mb-2 mb-lg-0" class="nav nav-tabs">
+              <li class="nav-item">
+                <a class="nav-link active" aria-current="page" href="Inicio.html">Início</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link active" aria-current="page" href="Historia.html">História</a>
+              </li>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link active" aria-current="page" href="Contato.html">Contato</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link active" aria-current="page" href="Login.html">Login</a>
+              </li>
+              </ul>
+            
+            
+            <form class="d-flex" role="Pesquisar">
+              <input class="form-control me-2" type="Pesquisar" placeholder="Pesquisar" aria-label="Pesquisar">
+              <button class="btn" type="submit">Pesquisar</button>
+            </form>
+          </div>
+        </div>
+      </nav>
+
+    <!-- Botão de abrir a janela de contato -->
+    <div class="contact-button" onclick="openContactPopup()">Contato</div>
+
+    <!-- Janela de contato -->
+    <div class="contact-popup" id="contact-popup">
+        <h2>Entre em Contato</h2>
+        <input type="text" placeholder="Nome" id="contact-name">
+        <input type="email" placeholder="Email" id="contact-email">
+        <input type="text" placeholder="Assunto" id="contact-subject">
+        <textarea placeholder="Mensagem" id="contact-message"></textarea>
+        <button onclick="submitContactForm()">Enviar</button>
+    </div>
+
+    <!-- JavaScript para abrir e fechar a janela de contato -->
+    <script>
+        function openContactPopup() {
+            document.getElementById("contact-popup").style.display = "block";
+        }
+
+        function submitContactForm() {
+            const name = document.getElementById("contact-name").value;
+            const email = document.getElementById("contact-email").value;
+            const subject = document.getElementById("contact-subject").value;
+            const message = document.getElementById("contact-message").value;
+
+            // Valide os campos, envie os dados para o servidor ou realize outras ações necessárias aqui.
+            // Neste exemplo, apenas exibimos os dados em um alerta.
+            const formattedMessage = `Nome: ${name}\nEmail: ${email}\nAssunto: ${subject}\nMensagem: ${message}`;
+            alert("Dados do Formulário de Contato:\n\n" + formattedMessage);
+
+            // Feche a janela de contato após o envio.
+            document.getElementById("contact-popup").style.display = "none";
+        }
+    </script>
+
+<div class="footer">
+    © 2023 História das Pessoas Surdas
+</div>
+
+<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous">    
+</script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js" integrity="sha384-smHYKdLADwkXOn1EmN1qk/HfnUcbVRZyYmZ4qpPea6sjB/pTJ0euyQp0Mk8ck+5T" crossorigin="anonymous">   
+</script>
+
+</body>
+</html>
