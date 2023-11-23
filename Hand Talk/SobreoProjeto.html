@@ -1,0 +1,224 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>História das Pessoas Surdas</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-GLhlTQ8iRABdZLl6O3oVMWSktQOp6b7In1Zl3/Jr59b6EGGoI1aFkw7cmDA6j6gD" crossorigin="anonymous">
+
+    <style>
+        /* Estilos CSS para a barra de navegação */
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+        }
+        .navbar {
+            background-color: #81d3ba;
+            overflow: hidden;
+        }
+        .navbar a {
+            float: left;
+            font-size: 16px;
+            color: #085a42;
+            text-align: center;
+            padding: 14px 16px;
+            text-decoration: none;
+        }
+        .navbar a:hover {
+            background-color: #81d3ba;
+            color: #085a42;
+        }
+
+        /* Estilos CSS para o formulário de contato */
+        .container {
+            padding: 20px;
+        }
+        form {
+            max-width: 400px;
+            margin: 0 auto;
+        }
+        label, input, textarea {
+            display: block;
+            margin-bottom: 10px;
+        }
+
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+        }
+        .footer {
+            background-color: #085a42;
+            color: #81d3ba;
+            text-align: center;
+            padding: 10px;
+            position: fixed;
+            bottom: 0;
+            width: 100%;
+        }
+
+        /* Estilos CSS para o conteúdo */
+        .content {
+            padding: 20px;
+        }
+
+        /* Estilos CSS para a janela flutuante */
+        .popup {
+            position: fixed;
+            top: 0;
+            right: -400px; /* Inicialmente, a janela está fora da tela */
+            width: 300px;
+            height: 100%;
+            background-color: #81d3ba;
+            box-shadow: 0 0 5px rgba(0, 0, 0, 0.3);
+            transition: right 0.3s ease-in-out;
+            z-index: 1;
+        }
+
+        .popup.open {
+            right: 0; /* Quando aberta, a janela fica visível */
+        }
+
+        .popup-header {
+            background-color: #085a42;
+            color: #81d3ba;
+            padding: 10px;
+        }
+
+        .popup-content {
+            padding: 20px;
+        }
+
+        /* Estilos CSS para os campos de texto na janela flutuante */
+        input[type="text"] {
+            width: 100%;
+            padding: 10px;
+            margin-bottom: 10px;
+        }
+                /* Estilo CSS para o botão na janela flutuante */
+                .btn-group .button {
+            background-color: #04AA6D; /* Green */
+            border: 1px solid green;
+            color: white;
+            padding: 15px 32px;
+            text-align: center;
+            text-decoration: none;
+            font-size: 16px;
+            cursor: pointer;
+            width: 150px;
+            display: block;
+            }
+
+        .btn-group .button:not(:last-child) {
+            border-bottom: none; /* Prevent double borders */
+            }
+
+        .btn-group .button:hover {
+            background-color: #3e8e41;
+            }
+    </style>
+</head>
+<body>
+    <nav class="navbar navbar-expand-lg ">
+  
+        <div class="container-fluid">
+          <a class="navbar-brand" href="#">Hand Talk</a>
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+          </button>
+          <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            <ul class="navbar-nav me-auto mb-2 mb-lg-0" class="nav nav-tabs">
+              <li class="nav-item">
+                <a class="nav-link active" aria-current="page" href="Inicio.html">Início</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link active" aria-current="page" href="Historia.html">História</a>
+              </li>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link active" aria-current="page" href="Contato.html">Contato</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link active" aria-current="page" href="Login.html">Login</a>
+              </li>
+              </ul>
+            
+            
+            <form class="d-flex" role="Pesquisar">
+              <input class="form-control me-2" type="Pesquisar" placeholder="Pesquisar" aria-label="Pesquisar">
+              <button class="btn" type="submit">Pesquisar</button>
+            </form>
+          </div>
+        </div>
+      </nav>
+
+          <!-- Janela flutuante -->
+    <div class="popup" id="myPopup">
+        <div class="popup-header">
+            <h2>Janela Flutuante</h2>
+            <button onclick="closePopup()">Fechar</button>
+        </div>
+        <div class="popup-content">
+            <label for="orientador">Orientador:</label>
+            <input type="text" id="orientador" name="orientador">
+
+            <label for="aluna">Aluna:</label>
+            <input type="text" id="aluna" name="aluna" value="Gabriela Paludeto Guimarães" readonly>
+
+            <div class="btn-group">
+                <button class="button"> <a class="nav-link active" aria-current="page" href="Historia.html">História</a></button>
+              </div>
+              
+              <div class="btn-group">
+                <button class="button"><a class="nav-link active" aria-current="page" href="Curiosidades.html">Curiosidades</a></button>
+            </div>
+
+              <div class="btn-group">
+                <button class="button"><a class="nav-link active" aria-current="page" href="SobreoProjeto.html">Sobre o Projeto</a></button>
+            </div>
+
+        </div>
+    </div>
+
+    <!-- Botão para abrir a janela flutuante -->
+    <button onclick="openPopup()">Abrir Janela</button>
+
+    <!-- JavaScript para abrir e fechar a janela flutuante -->
+    <script>
+        function openPopup() {
+            document.getElementById("myPopup").classList.add("open");
+        }
+
+        function closePopup() {
+            document.getElementById("myPopup").classList.remove("open");
+        }
+    </script>
+    
+    <div class="content">
+        <h1>Sobre o Projeto:</h1>
+
+            <p>Muito antes da Libras ser inventada, pessoas não ouvintes já encontravam dificuldades
+                em viver em sociedade, além de sofrer muito preconceito, que até hoje é muito comum nesse
+                meio. Os surdos eram tratados de maneira diferente ao redor do mundo, no Egito, por exemplo,
+                eles eram vistos com muita adoração, para eles os não ouvintes serviam de interlocutores entre
+                os faraós e os deuses, já na Grécia e Itália eles eram vistos como inúteis e por não saberem se
+                expressar, eles eram marginalizados e não tinham seus direitos resguardados, poderiam até
+                ser condenados à morte. (Rodrigo Magno, 2021)</p>
+            <p></p>O principal problema para os surdos sempre foi na comunicação, já que são poucos os
+                não ouvintes que sabem o português, e os que sabem, podem apresentar falhas em sua fala, o
+                que torna a sua comunicação complicada. A função da Libras é justamente ajudar nesse
+                problema, porém é muito raro encontrar um ouvinte que saiba essa língua.</p>
+
+                <p>Esse projeto tem como objetivo conscientizar pessoas ouvintes, e incentivá-las a
+                    buscar a Libras como sua segunda língua por meio de pequenos jogos de pergunta e
+                    respostas.</p>
+
+        
+    </div>
+
+    <div class="footer">
+        © 2023 Curiosidades sobre Pessoas Surdas
+    </div>
+</body>
+</html>
